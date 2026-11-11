@@ -1,0 +1,4558 @@
+{
+  "domain": "other",
+  "fields": [
+    {
+      "column": "allocation_note",
+      "description": "Weekly allocation note (from market_regime_signals.allocation_note)",
+      "id": "sigmarail.field.market_context_daily.allocation_note.allocation_note",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "allocation_note",
+      "sql": "mx.allocation_note",
+      "table": "market_context_daily",
+      "type": "String"
+    },
+    {
+      "column": "allocation_reason",
+      "description": "Daily allocation reason (from market_regime_signals_daily.allocation_reason)",
+      "id": "sigmarail.field.market_context_daily.allocation_reason.allocation_reason",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "allocation_reason",
+      "sql": "mx.allocation_reason",
+      "table": "market_context_daily",
+      "type": "String"
+    },
+    {
+      "column": "bear_market_score",
+      "description": "Bear-market score (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.bear_market_score.bear_market_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "bear_market_score",
+      "sql": "mx.bear_market_score",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "bear_severity",
+      "description": "Bear-market severity label (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.bear_severity.bear_severity",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "bear_severity",
+      "sql": "mx.bear_severity",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "breadth55_days15",
+      "description": "Count of last 15 sessions with breadth_200d >= 0.55 (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth55_days15.breadth55_days15",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "breadth55_days15",
+      "sql": "mx.breadth55_days15",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "breadth_200d",
+      "description": "Daily breadth: fraction of universe above 200d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_200d.breadth_200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "breadth_200d",
+      "sql": "mx.breadth_200d",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "breadth_50d",
+      "description": "Daily breadth: fraction above 50d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_50d.breadth_50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "breadth_50d",
+      "sql": "mx.breadth_50d",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "breadth_thrust",
+      "description": "Breadth thrust signal (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_thrust.breadth_thrust",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "breadth_thrust",
+      "sql": "mx.breadth_thrust",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "clamp_risk_off",
+      "description": "Daily clamp flag forcing risk-off allocation (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.clamp_risk_off.clamp_risk_off",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "clamp_risk_off",
+      "sql": "mx.clamp_risk_off",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "composite_score_normalized",
+      "description": "Weekly regime composite score normalized (0..100; from market_regime_signals.composite_score_normalized)",
+      "id": "sigmarail.field.market_context_daily.composite_score_normalized.composite_score_normalized",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "composite_score_normalized",
+      "sql": "mx.composite_score_normalized",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "composite_score_raw",
+      "description": "Weekly regime composite score raw (0..1; from market_regime_signals.composite_score_raw)",
+      "id": "sigmarail.field.market_context_daily.composite_score_raw.composite_score_raw",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "composite_score_raw",
+      "sql": "mx.composite_score_raw",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "confirmation_conditions",
+      "description": "Confirmation conditions that supported the signal (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.confirmation_conditions.confirmation_conditions",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "confirmation_conditions",
+      "sql": "mx.confirmation_conditions",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "distribution_count_25d",
+      "description": "Distribution day count over last 25 sessions (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.distribution_count_25d.distribution_count_25d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "distribution_count_25d",
+      "sql": "mx.distribution_count_25d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ftd",
+      "description": "Follow-through day proxy flag (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ftd.ftd",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "ftd",
+      "sql": "mx.ftd",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_bear_market_active",
+      "description": "Weekly bear-market override flag (from market_regime_signals.is_bear_market_active)",
+      "id": "sigmarail.field.market_context_daily.is_bear_market_active.is_bear_market_active",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_bear_market_active",
+      "sql": "mx.is_bear_market_active",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_bear_market_enhanced",
+      "description": "Enhanced bear-market flag (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.is_bear_market_enhanced.is_bear_market_enhanced",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_bear_market_enhanced",
+      "sql": "mx.is_bear_market_enhanced",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_price_above_sma30w_duration",
+      "description": "Consecutive weeks price is above/below 30w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_price_above_sma30w_duration.is_price_above_sma30w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_price_above_sma30w_duration",
+      "sql": "mx.is_price_above_sma30w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_price_above_sma40w_duration",
+      "description": "Consecutive weeks price is above/below 40w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_price_above_sma40w_duration.is_price_above_sma40w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_price_above_sma40w_duration",
+      "sql": "mx.is_price_above_sma40w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_sma30w_above_sma40w_duration",
+      "description": "Consecutive weeks 30w SMA is above/below 40w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_sma30w_above_sma40w_duration.is_sma30w_above_sma40w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_sma30w_above_sma40w_duration",
+      "sql": "mx.is_sma30w_above_sma40w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_sma40w_trending_up_duration",
+      "description": "Consecutive weeks 40w SMA slope is positive/negative (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_sma40w_trending_up_duration.is_sma40w_trending_up_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "is_sma40w_trending_up_duration",
+      "sql": "mx.is_sma40w_trending_up_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "ma200_slope_pos",
+      "description": "1 if SPY SMA200d slope positive (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma200_slope_pos.ma200_slope_pos",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "ma200_slope_pos",
+      "sql": "mx.ma200_slope_pos",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma50_gt_ma200",
+      "description": "1 if SPY SMA50d > SMA200d (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma50_gt_ma200.ma50_gt_ma200",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "ma50_gt_ma200",
+      "sql": "mx.ma50_gt_ma200",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma50_slope_pos",
+      "description": "1 if SPY SMA50d slope positive (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma50_slope_pos.ma50_slope_pos",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "ma50_slope_pos",
+      "sql": "mx.ma50_slope_pos",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma_stack_score",
+      "description": "0..5 MA stack score (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma_stack_score.ma_stack_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "ma_stack_score",
+      "sql": "mx.ma_stack_score",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "market_regime_signal",
+      "description": "Weekly regime bucket/signal (0/50/100; from market_regime_signals.market_regime_signal)",
+      "id": "sigmarail.field.market_context_daily.market_regime_signal.market_regime_signal",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "market_regime_signal",
+      "sql": "mx.market_regime_signal",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "market_sma200_trend_strength",
+      "description": "Weekly trend strength score (from market_regime_signals.market_sma200_trend_strength)",
+      "id": "sigmarail.field.market_context_daily.market_sma200_trend_strength.market_sma200_trend_strength",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "market_sma200_trend_strength",
+      "sql": "mx.market_sma200_trend_strength",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "allocation_note",
+      "description": "Weekly allocation note (from market_regime_signals.allocation_note)",
+      "id": "sigmarail.field.market_context_daily.allocation_note.mx.allocation_note",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.allocation_note",
+      "sql": "mx.allocation_note",
+      "table": "market_context_daily",
+      "type": "String"
+    },
+    {
+      "column": "allocation_reason",
+      "description": "Daily allocation reason (from market_regime_signals_daily.allocation_reason)",
+      "id": "sigmarail.field.market_context_daily.allocation_reason.mx.allocation_reason",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.allocation_reason",
+      "sql": "mx.allocation_reason",
+      "table": "market_context_daily",
+      "type": "String"
+    },
+    {
+      "column": "bear_market_score",
+      "description": "Bear-market score (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.bear_market_score.mx.bear_market_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.bear_market_score",
+      "sql": "mx.bear_market_score",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "bear_severity",
+      "description": "Bear-market severity label (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.bear_severity.mx.bear_severity",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.bear_severity",
+      "sql": "mx.bear_severity",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "breadth55_days15",
+      "description": "Count of last 15 sessions with breadth_200d >= 0.55 (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth55_days15.mx.breadth55_days15",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.breadth55_days15",
+      "sql": "mx.breadth55_days15",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "breadth_200d",
+      "description": "Daily breadth: fraction of universe above 200d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_200d.mx.breadth_200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.breadth_200d",
+      "sql": "mx.breadth_200d",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "breadth_50d",
+      "description": "Daily breadth: fraction above 50d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_50d.mx.breadth_50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.breadth_50d",
+      "sql": "mx.breadth_50d",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "breadth_thrust",
+      "description": "Breadth thrust signal (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.breadth_thrust.mx.breadth_thrust",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.breadth_thrust",
+      "sql": "mx.breadth_thrust",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "clamp_risk_off",
+      "description": "Daily clamp flag forcing risk-off allocation (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.clamp_risk_off.mx.clamp_risk_off",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.clamp_risk_off",
+      "sql": "mx.clamp_risk_off",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "composite_score_normalized",
+      "description": "Weekly regime composite score normalized (0..100; from market_regime_signals.composite_score_normalized)",
+      "id": "sigmarail.field.market_context_daily.composite_score_normalized.mx.composite_score_normalized",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.composite_score_normalized",
+      "sql": "mx.composite_score_normalized",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "composite_score_raw",
+      "description": "Weekly regime composite score raw (0..1; from market_regime_signals.composite_score_raw)",
+      "id": "sigmarail.field.market_context_daily.composite_score_raw.mx.composite_score_raw",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.composite_score_raw",
+      "sql": "mx.composite_score_raw",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "confirmation_conditions",
+      "description": "Confirmation conditions that supported the signal (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.confirmation_conditions.mx.confirmation_conditions",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.confirmation_conditions",
+      "sql": "mx.confirmation_conditions",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "distribution_count_25d",
+      "description": "Distribution day count over last 25 sessions (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.distribution_count_25d.mx.distribution_count_25d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.distribution_count_25d",
+      "sql": "mx.distribution_count_25d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ftd",
+      "description": "Follow-through day proxy flag (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ftd.mx.ftd",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.ftd",
+      "sql": "mx.ftd",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_bear_market_active",
+      "description": "Weekly bear-market override flag (from market_regime_signals.is_bear_market_active)",
+      "id": "sigmarail.field.market_context_daily.is_bear_market_active.mx.is_bear_market_active",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_bear_market_active",
+      "sql": "mx.is_bear_market_active",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_bear_market_enhanced",
+      "description": "Enhanced bear-market flag (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.is_bear_market_enhanced.mx.is_bear_market_enhanced",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_bear_market_enhanced",
+      "sql": "mx.is_bear_market_enhanced",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "is_price_above_sma30w_duration",
+      "description": "Consecutive weeks price is above/below 30w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_price_above_sma30w_duration.mx.is_price_above_sma30w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_price_above_sma30w_duration",
+      "sql": "mx.is_price_above_sma30w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_price_above_sma40w_duration",
+      "description": "Consecutive weeks price is above/below 40w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_price_above_sma40w_duration.mx.is_price_above_sma40w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_price_above_sma40w_duration",
+      "sql": "mx.is_price_above_sma40w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_sma30w_above_sma40w_duration",
+      "description": "Consecutive weeks 30w SMA is above/below 40w SMA (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_sma30w_above_sma40w_duration.mx.is_sma30w_above_sma40w_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_sma30w_above_sma40w_duration",
+      "sql": "mx.is_sma30w_above_sma40w_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "is_sma40w_trending_up_duration",
+      "description": "Consecutive weeks 40w SMA slope is positive/negative (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.is_sma40w_trending_up_duration.mx.is_sma40w_trending_up_duration",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.is_sma40w_trending_up_duration",
+      "sql": "mx.is_sma40w_trending_up_duration",
+      "table": "market_context_daily",
+      "type": "Nullable(UInt16)"
+    },
+    {
+      "column": "ma200_slope_pos",
+      "description": "1 if SPY SMA200d slope positive (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma200_slope_pos.mx.ma200_slope_pos",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.ma200_slope_pos",
+      "sql": "mx.ma200_slope_pos",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma50_gt_ma200",
+      "description": "1 if SPY SMA50d > SMA200d (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma50_gt_ma200.mx.ma50_gt_ma200",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.ma50_gt_ma200",
+      "sql": "mx.ma50_gt_ma200",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma50_slope_pos",
+      "description": "1 if SPY SMA50d slope positive (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma50_slope_pos.mx.ma50_slope_pos",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.ma50_slope_pos",
+      "sql": "mx.ma50_slope_pos",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "ma_stack_score",
+      "description": "0..5 MA stack score (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.ma_stack_score.mx.ma_stack_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.ma_stack_score",
+      "sql": "mx.ma_stack_score",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "market_regime_signal",
+      "description": "Weekly regime bucket/signal (0/50/100; from market_regime_signals.market_regime_signal)",
+      "id": "sigmarail.field.market_context_daily.market_regime_signal.mx.market_regime_signal",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.market_regime_signal",
+      "sql": "mx.market_regime_signal",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "market_sma200_trend_strength",
+      "description": "Weekly trend strength score (from market_regime_signals.market_sma200_trend_strength)",
+      "id": "sigmarail.field.market_context_daily.market_sma200_trend_strength.mx.market_sma200_trend_strength",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.market_sma200_trend_strength",
+      "sql": "mx.market_sma200_trend_strength",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma200d",
+      "description": "Market breadth: fraction of universe above 200d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma200d.mx.pct_above_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma200d",
+      "sql": "mx.pct_above_sma200d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma200d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 200d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma200d_sma5.mx.pct_above_sma200d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma200d_sma5",
+      "sql": "mx.pct_above_sma200d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma20d",
+      "description": "Market breadth: fraction of universe above 20d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma20d.mx.pct_above_sma20d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma20d",
+      "sql": "mx.pct_above_sma20d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma20d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 20d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma20d_sma5.mx.pct_above_sma20d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma20d_sma5",
+      "sql": "mx.pct_above_sma20d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma50d",
+      "description": "Market breadth: fraction of universe above 50d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma50d.mx.pct_above_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma50d",
+      "sql": "mx.pct_above_sma50d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma50d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 50d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma50d_sma5.mx.pct_above_sma50d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_above_sma50d_sma5",
+      "sql": "mx.pct_above_sma50d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_near_52w_high",
+      "description": "Market breadth: fraction of universe near 52-week highs (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_near_52w_high.mx.pct_near_52w_high",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_near_52w_high",
+      "sql": "mx.pct_near_52w_high",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_near_52w_low",
+      "description": "Market breadth: fraction of universe near 52-week lows (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_near_52w_low.mx.pct_near_52w_low",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_near_52w_low",
+      "sql": "mx.pct_near_52w_low",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_sp500_above_sma40w",
+      "description": "Weekly breadth: percent of S&P 500 above 40-week SMA (from broad_market_breadth_weekly)",
+      "id": "sigmarail.field.market_context_daily.pct_sp500_above_sma40w.mx.pct_sp500_above_sma40w",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_sp500_above_sma40w",
+      "sql": "mx.pct_sp500_above_sma40w",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "pct_stocks_above_sma200",
+      "description": "Weekly breadth proxy used for regime scoring (from market_regime_signals.pct_stocks_above_sma200)",
+      "id": "sigmarail.field.market_context_daily.pct_stocks_above_sma200.mx.pct_stocks_above_sma200",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.pct_stocks_above_sma200",
+      "sql": "mx.pct_stocks_above_sma200",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "price_vs_52w_high_pct",
+      "description": "Market trend template magnitude: (close/high_52w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_52w_high_pct.mx.price_vs_52w_high_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.price_vs_52w_high_pct",
+      "sql": "mx.price_vs_52w_high_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_52w_low_pct",
+      "description": "Market trend template magnitude: (close/low_52w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_52w_low_pct.mx.price_vs_52w_low_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.price_vs_52w_low_pct",
+      "sql": "mx.price_vs_52w_low_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_sma30w_pct",
+      "description": "Market trend template magnitude: (close/sma30w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_sma30w_pct.mx.price_vs_sma30w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.price_vs_sma30w_pct",
+      "sql": "mx.price_vs_sma30w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_sma40w_pct",
+      "description": "Market trend template magnitude: (close/sma40w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_sma40w_pct.mx.price_vs_sma40w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.price_vs_sma40w_pct",
+      "sql": "mx.price_vs_sma40w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "primary_condition",
+      "description": "Primary bear-market condition that triggered (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.primary_condition.mx.primary_condition",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.primary_condition",
+      "sql": "mx.primary_condition",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "risk_off_fast_flags",
+      "description": "0..4 count of fast risk-off diagnostics (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.risk_off_fast_flags.mx.risk_off_fast_flags",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.risk_off_fast_flags",
+      "sql": "mx.risk_off_fast_flags",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "risk_on_fast_flags",
+      "description": "0..4 count of fast risk-on diagnostics (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.risk_on_fast_flags.mx.risk_on_fast_flags",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.risk_on_fast_flags",
+      "sql": "mx.risk_on_fast_flags",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "sma30w_vs_sma40w_pct",
+      "description": "Market trend template magnitude: (sma30w/sma40w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.sma30w_vs_sma40w_pct.mx.sma30w_vs_sma40w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.sma30w_vs_sma40w_pct",
+      "sql": "mx.sma30w_vs_sma40w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "sma40w_slope_pct",
+      "description": "Market trend template magnitude: 4-week slope of sma40w (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.sma40w_slope_pct.mx.sma40w_slope_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.sma40w_slope_pct",
+      "sql": "mx.sma40w_slope_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "spy_above200d",
+      "description": "1 if SPY close > SPY 200d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.spy_above200d.mx.spy_above200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_above200d",
+      "sql": "mx.spy_above200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_above50d",
+      "description": "1 if SPY close > SPY 50d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.spy_above50d.mx.spy_above50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_above50d",
+      "sql": "mx.spy_above50d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_below200d",
+      "description": "1 if SPY close < SPY 200d SMA (from market_regime_signals_daily.spy_below200d)",
+      "id": "sigmarail.field.market_context_daily.spy_below200d.mx.spy_below200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_below200d",
+      "sql": "mx.spy_below200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_below200d_3d",
+      "description": "1 if SPY below 200d SMA for 3 consecutive days (from market_regime_signals_daily.spy_below200d_3d)",
+      "id": "sigmarail.field.market_context_daily.spy_below200d_3d.mx.spy_below200d_3d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_below200d_3d",
+      "sql": "mx.spy_below200d_3d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_close",
+      "description": "SPY official close for the session (from market_regime_signals_daily.spy_close)",
+      "id": "sigmarail.field.market_context_daily.spy_close.mx.spy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_close",
+      "sql": "mx.spy_close",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "spy_sma200d",
+      "description": "SPY 200-day SMA (from market_regime_signals_daily.spy_sma200d)",
+      "id": "sigmarail.field.market_context_daily.spy_sma200d.mx.spy_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_sma200d",
+      "sql": "mx.spy_sma200d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "spy_sma50d",
+      "description": "SPY 50-day SMA (from market_regime_signals_daily.spy_sma50d)",
+      "id": "sigmarail.field.market_context_daily.spy_sma50d.mx.spy_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.spy_sma50d",
+      "sql": "mx.spy_sma50d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "svxy_close",
+      "description": "SVXY close price",
+      "id": "sigmarail.field.market_context_daily.svxy_close.mx.svxy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.svxy_close",
+      "sql": "mx.svxy_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "svxy_vs_vix_basis",
+      "description": "SVXY/VIX basis (backwardation proxy)",
+      "id": "sigmarail.field.market_context_daily.svxy_vs_vix_basis.mx.svxy_vs_vix_basis",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.svxy_vs_vix_basis",
+      "sql": "mx.svxy_vs_vix_basis",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "trend_score",
+      "description": "Weekly market trend template score (0-6; from market_trend_template.trend_score)",
+      "id": "sigmarail.field.market_context_daily.trend_score.mx.trend_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.trend_score",
+      "sql": "mx.trend_score",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "uvxy_close",
+      "description": "UVXY close price",
+      "id": "sigmarail.field.market_context_daily.uvxy_close.mx.uvxy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.uvxy_close",
+      "sql": "mx.uvxy_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "uvxy_vs_vix_basis",
+      "description": "UVXY/VIX basis (contango proxy)",
+      "id": "sigmarail.field.market_context_daily.uvxy_vs_vix_basis.mx.uvxy_vs_vix_basis",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.uvxy_vs_vix_basis",
+      "sql": "mx.uvxy_vs_vix_basis",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_above_sma200d",
+      "description": "1 if VIX > SMA200",
+      "id": "sigmarail.field.market_context_daily.vix_above_sma200d.mx.vix_above_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_above_sma200d",
+      "sql": "mx.vix_above_sma200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_atr_14_pct",
+      "description": "^VIX ATR14 as % of close",
+      "id": "sigmarail.field.market_context_daily.vix_atr_14_pct.mx.vix_atr_14_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_atr_14_pct",
+      "sql": "mx.vix_atr_14_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_close",
+      "description": "^VIX close price",
+      "id": "sigmarail.field.market_context_daily.vix_close.mx.vix_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_close",
+      "sql": "mx.vix_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_contango_proxy",
+      "description": "1 if UVXY basis > SVXY basis (contango)",
+      "id": "sigmarail.field.market_context_daily.vix_contango_proxy.mx.vix_contango_proxy",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_contango_proxy",
+      "sql": "mx.vix_contango_proxy",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_sma200d",
+      "description": "^VIX 200-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma200d.mx.vix_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_sma200d",
+      "sql": "mx.vix_sma200d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_sma20d",
+      "description": "^VIX 20-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma20d.mx.vix_sma20d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_sma20d",
+      "sql": "mx.vix_sma20d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_sma50d",
+      "description": "^VIX 50-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma50d.mx.vix_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_sma50d",
+      "sql": "mx.vix_sma50d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_spike_flag",
+      "description": "1 if VIX ATR% > 1.5x 20d avg",
+      "id": "sigmarail.field.market_context_daily.vix_spike_flag.mx.vix_spike_flag",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_spike_flag",
+      "sql": "mx.vix_spike_flag",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_vs_sma200d_pct",
+      "description": "^VIX vs SMA200 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma200d_pct.mx.vix_vs_sma200d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_vs_sma200d_pct",
+      "sql": "mx.vix_vs_sma200d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_vs_sma20d_pct",
+      "description": "^VIX vs SMA20 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma20d_pct.mx.vix_vs_sma20d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_vs_sma20d_pct",
+      "sql": "mx.vix_vs_sma20d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_vs_sma50d_pct",
+      "description": "^VIX vs SMA50 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma50d_pct.mx.vix_vs_sma50d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.vix_vs_sma50d_pct",
+      "sql": "mx.vix_vs_sma50d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "weekly_allocation_fraction",
+      "description": "Weekly allocation fraction (0..1; from market_regime_signals.allocation_fraction)",
+      "id": "sigmarail.field.market_context_daily.weekly_allocation_fraction.mx.weekly_allocation_fraction",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.weekly_allocation_fraction",
+      "sql": "mx.weekly_allocation_fraction",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "weekly_allocation_tier",
+      "description": "Weekly allocation tier (percent-scaled; from market_regime_signals.allocation_tier)",
+      "id": "sigmarail.field.market_context_daily.weekly_allocation_tier.mx.weekly_allocation_tier",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.weekly_allocation_tier",
+      "sql": "mx.weekly_allocation_tier",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "weekly_date",
+      "description": "Weekly regime join key (prior closed weekly Monday; from market_regime_signals_daily.weekly_date)",
+      "id": "sigmarail.field.market_context_daily.weekly_date.mx.weekly_date",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "mx.weekly_date",
+      "sql": "mx.weekly_date",
+      "table": "market_context_daily",
+      "type": "Date"
+    },
+    {
+      "column": "pct_above_sma200d",
+      "description": "Market breadth: fraction of universe above 200d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma200d.pct_above_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma200d",
+      "sql": "mx.pct_above_sma200d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma200d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 200d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma200d_sma5.pct_above_sma200d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma200d_sma5",
+      "sql": "mx.pct_above_sma200d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma20d",
+      "description": "Market breadth: fraction of universe above 20d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma20d.pct_above_sma20d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma20d",
+      "sql": "mx.pct_above_sma20d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma20d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 20d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma20d_sma5.pct_above_sma20d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma20d_sma5",
+      "sql": "mx.pct_above_sma20d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma50d",
+      "description": "Market breadth: fraction of universe above 50d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma50d.pct_above_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma50d",
+      "sql": "mx.pct_above_sma50d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_above_sma50d_sma5",
+      "description": "Market breadth: 5-day smoothed fraction above 50d SMA (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_above_sma50d_sma5.pct_above_sma50d_sma5",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_above_sma50d_sma5",
+      "sql": "mx.pct_above_sma50d_sma5",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_near_52w_high",
+      "description": "Market breadth: fraction of universe near 52-week highs (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_near_52w_high.pct_near_52w_high",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_near_52w_high",
+      "sql": "mx.pct_near_52w_high",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_near_52w_low",
+      "description": "Market breadth: fraction of universe near 52-week lows (from broad_market_breadth)",
+      "id": "sigmarail.field.market_context_daily.pct_near_52w_low.pct_near_52w_low",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_near_52w_low",
+      "sql": "mx.pct_near_52w_low",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "pct_sp500_above_sma40w",
+      "description": "Weekly breadth: percent of S&P 500 above 40-week SMA (from broad_market_breadth_weekly)",
+      "id": "sigmarail.field.market_context_daily.pct_sp500_above_sma40w.pct_sp500_above_sma40w",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_sp500_above_sma40w",
+      "sql": "mx.pct_sp500_above_sma40w",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "pct_stocks_above_sma200",
+      "description": "Weekly breadth proxy used for regime scoring (from market_regime_signals.pct_stocks_above_sma200)",
+      "id": "sigmarail.field.market_context_daily.pct_stocks_above_sma200.pct_stocks_above_sma200",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "pct_stocks_above_sma200",
+      "sql": "mx.pct_stocks_above_sma200",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "price_vs_52w_high_pct",
+      "description": "Market trend template magnitude: (close/high_52w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_52w_high_pct.price_vs_52w_high_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "price_vs_52w_high_pct",
+      "sql": "mx.price_vs_52w_high_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_52w_low_pct",
+      "description": "Market trend template magnitude: (close/low_52w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_52w_low_pct.price_vs_52w_low_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "price_vs_52w_low_pct",
+      "sql": "mx.price_vs_52w_low_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_sma30w_pct",
+      "description": "Market trend template magnitude: (close/sma30w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_sma30w_pct.price_vs_sma30w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "price_vs_sma30w_pct",
+      "sql": "mx.price_vs_sma30w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "price_vs_sma40w_pct",
+      "description": "Market trend template magnitude: (close/sma40w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.price_vs_sma40w_pct.price_vs_sma40w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "price_vs_sma40w_pct",
+      "sql": "mx.price_vs_sma40w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "primary_condition",
+      "description": "Primary bear-market condition that triggered (from enhanced_bear_market_signals)",
+      "id": "sigmarail.field.market_context_daily.primary_condition.primary_condition",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "primary_condition",
+      "sql": "mx.primary_condition",
+      "table": "market_context_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "risk_off_fast_flags",
+      "description": "0..4 count of fast risk-off diagnostics (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.risk_off_fast_flags.risk_off_fast_flags",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "risk_off_fast_flags",
+      "sql": "mx.risk_off_fast_flags",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "risk_on_fast_flags",
+      "description": "0..4 count of fast risk-on diagnostics (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.risk_on_fast_flags.risk_on_fast_flags",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "risk_on_fast_flags",
+      "sql": "mx.risk_on_fast_flags",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "sma30w_vs_sma40w_pct",
+      "description": "Market trend template magnitude: (sma30w/sma40w) - 1 (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.sma30w_vs_sma40w_pct.sma30w_vs_sma40w_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "sma30w_vs_sma40w_pct",
+      "sql": "mx.sma30w_vs_sma40w_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "sma40w_slope_pct",
+      "description": "Market trend template magnitude: 4-week slope of sma40w (from market_trend_template)",
+      "id": "sigmarail.field.market_context_daily.sma40w_slope_pct.sma40w_slope_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "sma40w_slope_pct",
+      "sql": "mx.sma40w_slope_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "spy_above200d",
+      "description": "1 if SPY close > SPY 200d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.spy_above200d.spy_above200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_above200d",
+      "sql": "mx.spy_above200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_above50d",
+      "description": "1 if SPY close > SPY 50d SMA (from market_regime_signals_daily)",
+      "id": "sigmarail.field.market_context_daily.spy_above50d.spy_above50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_above50d",
+      "sql": "mx.spy_above50d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_below200d",
+      "description": "1 if SPY close < SPY 200d SMA (from market_regime_signals_daily.spy_below200d)",
+      "id": "sigmarail.field.market_context_daily.spy_below200d.spy_below200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_below200d",
+      "sql": "mx.spy_below200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_below200d_3d",
+      "description": "1 if SPY below 200d SMA for 3 consecutive days (from market_regime_signals_daily.spy_below200d_3d)",
+      "id": "sigmarail.field.market_context_daily.spy_below200d_3d.spy_below200d_3d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_below200d_3d",
+      "sql": "mx.spy_below200d_3d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "spy_close",
+      "description": "SPY official close for the session (from market_regime_signals_daily.spy_close)",
+      "id": "sigmarail.field.market_context_daily.spy_close.spy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_close",
+      "sql": "mx.spy_close",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "spy_sma200d",
+      "description": "SPY 200-day SMA (from market_regime_signals_daily.spy_sma200d)",
+      "id": "sigmarail.field.market_context_daily.spy_sma200d.spy_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_sma200d",
+      "sql": "mx.spy_sma200d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "spy_sma50d",
+      "description": "SPY 50-day SMA (from market_regime_signals_daily.spy_sma50d)",
+      "id": "sigmarail.field.market_context_daily.spy_sma50d.spy_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "spy_sma50d",
+      "sql": "mx.spy_sma50d",
+      "table": "market_context_daily",
+      "type": "Float64"
+    },
+    {
+      "column": "svxy_close",
+      "description": "SVXY close price",
+      "id": "sigmarail.field.market_context_daily.svxy_close.svxy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "svxy_close",
+      "sql": "mx.svxy_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "svxy_vs_vix_basis",
+      "description": "SVXY/VIX basis (backwardation proxy)",
+      "id": "sigmarail.field.market_context_daily.svxy_vs_vix_basis.svxy_vs_vix_basis",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "svxy_vs_vix_basis",
+      "sql": "mx.svxy_vs_vix_basis",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "trend_score",
+      "description": "Weekly market trend template score (0-6; from market_trend_template.trend_score)",
+      "id": "sigmarail.field.market_context_daily.trend_score.trend_score",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "trend_score",
+      "sql": "mx.trend_score",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "uvxy_close",
+      "description": "UVXY close price",
+      "id": "sigmarail.field.market_context_daily.uvxy_close.uvxy_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "uvxy_close",
+      "sql": "mx.uvxy_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "uvxy_vs_vix_basis",
+      "description": "UVXY/VIX basis (contango proxy)",
+      "id": "sigmarail.field.market_context_daily.uvxy_vs_vix_basis.uvxy_vs_vix_basis",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "uvxy_vs_vix_basis",
+      "sql": "mx.uvxy_vs_vix_basis",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_above_sma200d",
+      "description": "1 if VIX > SMA200",
+      "id": "sigmarail.field.market_context_daily.vix_above_sma200d.vix_above_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_above_sma200d",
+      "sql": "mx.vix_above_sma200d",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_atr_14_pct",
+      "description": "^VIX ATR14 as % of close",
+      "id": "sigmarail.field.market_context_daily.vix_atr_14_pct.vix_atr_14_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_atr_14_pct",
+      "sql": "mx.vix_atr_14_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_close",
+      "description": "^VIX close price",
+      "id": "sigmarail.field.market_context_daily.vix_close.vix_close",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_close",
+      "sql": "mx.vix_close",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_contango_proxy",
+      "description": "1 if UVXY basis > SVXY basis (contango)",
+      "id": "sigmarail.field.market_context_daily.vix_contango_proxy.vix_contango_proxy",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_contango_proxy",
+      "sql": "mx.vix_contango_proxy",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_sma200d",
+      "description": "^VIX 200-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma200d.vix_sma200d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_sma200d",
+      "sql": "mx.vix_sma200d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_sma20d",
+      "description": "^VIX 20-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma20d.vix_sma20d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_sma20d",
+      "sql": "mx.vix_sma20d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_sma50d",
+      "description": "^VIX 50-day SMA",
+      "id": "sigmarail.field.market_context_daily.vix_sma50d.vix_sma50d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_sma50d",
+      "sql": "mx.vix_sma50d",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_spike_flag",
+      "description": "1 if VIX ATR% > 1.5x 20d avg",
+      "id": "sigmarail.field.market_context_daily.vix_spike_flag.vix_spike_flag",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_spike_flag",
+      "sql": "mx.vix_spike_flag",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "vix_vs_sma200d_pct",
+      "description": "^VIX vs SMA200 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma200d_pct.vix_vs_sma200d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_vs_sma200d_pct",
+      "sql": "mx.vix_vs_sma200d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_vs_sma20d_pct",
+      "description": "^VIX vs SMA20 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma20d_pct.vix_vs_sma20d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_vs_sma20d_pct",
+      "sql": "mx.vix_vs_sma20d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "vix_vs_sma50d_pct",
+      "description": "^VIX vs SMA50 % (from daily_metrics_derived)",
+      "id": "sigmarail.field.market_context_daily.vix_vs_sma50d_pct.vix_vs_sma50d_pct",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "vix_vs_sma50d_pct",
+      "sql": "mx.vix_vs_sma50d_pct",
+      "table": "market_context_daily",
+      "type": "Nullable(Float64)"
+    },
+    {
+      "column": "weekly_allocation_fraction",
+      "description": "Weekly allocation fraction (0..1; from market_regime_signals.allocation_fraction)",
+      "id": "sigmarail.field.market_context_daily.weekly_allocation_fraction.weekly_allocation_fraction",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "weekly_allocation_fraction",
+      "sql": "mx.weekly_allocation_fraction",
+      "table": "market_context_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "weekly_allocation_tier",
+      "description": "Weekly allocation tier (percent-scaled; from market_regime_signals.allocation_tier)",
+      "id": "sigmarail.field.market_context_daily.weekly_allocation_tier.weekly_allocation_tier",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "weekly_allocation_tier",
+      "sql": "mx.weekly_allocation_tier",
+      "table": "market_context_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "weekly_date",
+      "description": "Weekly regime join key (prior closed weekly Monday; from market_regime_signals_daily.weekly_date)",
+      "id": "sigmarail.field.market_context_daily.weekly_date.weekly_date",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "weekly_date",
+      "sql": "mx.weekly_date",
+      "table": "market_context_daily",
+      "type": "Date"
+    },
+    {
+      "column": "factor_alpha_tstat_252d",
+      "description": "alpha_tstat window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_alpha_tstat_252d.fa.factor_alpha_tstat_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_alpha_tstat_252d",
+      "sql": "fa.factor_alpha_tstat_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_alpha_tstat_60d",
+      "description": "alpha_tstat window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_alpha_tstat_60d.fa.factor_alpha_tstat_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_alpha_tstat_60d",
+      "sql": "fa.factor_alpha_tstat_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_mkt_252d",
+      "description": "beta_mkt window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_mkt_252d.fa.factor_beta_mkt_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_beta_mkt_252d",
+      "sql": "fa.factor_beta_mkt_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_mkt_60d",
+      "description": "beta_mkt window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_mkt_60d.fa.factor_beta_mkt_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_beta_mkt_60d",
+      "sql": "fa.factor_beta_mkt_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_sector_252d",
+      "description": "beta_sector window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_sector_252d.fa.factor_beta_sector_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_beta_sector_252d",
+      "sql": "fa.factor_beta_sector_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_sector_60d",
+      "description": "beta_sector window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_sector_60d.fa.factor_beta_sector_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_beta_sector_60d",
+      "sql": "fa.factor_beta_sector_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_r2_252d",
+      "description": "r2 window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_r2_252d.fa.factor_r2_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_r2_252d",
+      "sql": "fa.factor_r2_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_r2_60d",
+      "description": "r2 window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_r2_60d.fa.factor_r2_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_r2_60d",
+      "sql": "fa.factor_r2_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_residual_252d",
+      "description": "epsilon_t window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_residual_252d.fa.factor_residual_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_residual_252d",
+      "sql": "fa.factor_residual_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_residual_60d",
+      "description": "epsilon_t window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_residual_60d.fa.factor_residual_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_residual_60d",
+      "sql": "fa.factor_residual_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_rolling_alpha_252d",
+      "description": "rolling_alpha window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_rolling_alpha_252d.fa.factor_rolling_alpha_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_rolling_alpha_252d",
+      "sql": "fa.factor_rolling_alpha_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_rolling_alpha_60d",
+      "description": "rolling_alpha window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_rolling_alpha_60d.fa.factor_rolling_alpha_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fa.factor_rolling_alpha_60d",
+      "sql": "fa.factor_rolling_alpha_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_alpha_tstat_252d",
+      "description": "alpha_tstat window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_alpha_tstat_252d.factor_alpha_tstat_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_alpha_tstat_252d",
+      "sql": "fa.factor_alpha_tstat_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_alpha_tstat_60d",
+      "description": "alpha_tstat window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_alpha_tstat_60d.factor_alpha_tstat_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_alpha_tstat_60d",
+      "sql": "fa.factor_alpha_tstat_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_mkt_252d",
+      "description": "beta_mkt window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_mkt_252d.factor_beta_mkt_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_beta_mkt_252d",
+      "sql": "fa.factor_beta_mkt_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_mkt_60d",
+      "description": "beta_mkt window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_mkt_60d.factor_beta_mkt_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_beta_mkt_60d",
+      "sql": "fa.factor_beta_mkt_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_sector_252d",
+      "description": "beta_sector window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_sector_252d.factor_beta_sector_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_beta_sector_252d",
+      "sql": "fa.factor_beta_sector_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_beta_sector_60d",
+      "description": "beta_sector window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_beta_sector_60d.factor_beta_sector_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_beta_sector_60d",
+      "sql": "fa.factor_beta_sector_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_r2_252d",
+      "description": "r2 window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_r2_252d.factor_r2_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_r2_252d",
+      "sql": "fa.factor_r2_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_r2_60d",
+      "description": "r2 window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_r2_60d.factor_r2_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_r2_60d",
+      "sql": "fa.factor_r2_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_residual_252d",
+      "description": "epsilon_t window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_residual_252d.factor_residual_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_residual_252d",
+      "sql": "fa.factor_residual_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_residual_60d",
+      "description": "epsilon_t window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_residual_60d.factor_residual_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_residual_60d",
+      "sql": "fa.factor_residual_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_rolling_alpha_252d",
+      "description": "rolling_alpha window=252",
+      "id": "sigmarail.field.screener_factor_daily.factor_rolling_alpha_252d.factor_rolling_alpha_252d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_rolling_alpha_252d",
+      "sql": "fa.factor_rolling_alpha_252d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "factor_rolling_alpha_60d",
+      "description": "rolling_alpha window=60",
+      "id": "sigmarail.field.screener_factor_daily.factor_rolling_alpha_60d.factor_rolling_alpha_60d",
+      "lineage_roots": [
+        "sep",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "factor_rolling_alpha_60d",
+      "sql": "fa.factor_rolling_alpha_60d",
+      "table": "screener_factor_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "created_at",
+      "description": "Row creation timestamp",
+      "id": "sigmarail.field.screener_forecast_models_daily.created_at.created_at",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "created_at",
+      "sql": "fc.created_at",
+      "table": "screener_forecast_models_daily",
+      "type": "DateTime"
+    },
+    {
+      "column": "created_at",
+      "description": "Row creation timestamp",
+      "id": "sigmarail.field.screener_forecast_models_daily.created_at.fc.created_at",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.created_at",
+      "sql": "fc.created_at",
+      "table": "screener_forecast_models_daily",
+      "type": "DateTime"
+    },
+    {
+      "column": "fwd_cagr_2y_normal_pe",
+      "description": "Expected 2-year annualized rate of return (CAGR %) if price converges to normal P/E",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_cagr_2y_normal_pe.fc.fwd_cagr_2y_normal_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.fwd_cagr_2y_normal_pe",
+      "sql": "fc.fwd_cagr_2y_normal_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_eps_1y",
+      "description": "1-year forward projected diluted EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_eps_1y.fc.fwd_eps_1y",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.fwd_eps_1y",
+      "sql": "fc.fwd_eps_1y",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_eps_2y",
+      "description": "2-year forward projected diluted EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_eps_2y.fc.fwd_eps_2y",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.fwd_eps_2y",
+      "sql": "fc.fwd_eps_2y",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_peg_ratio",
+      "description": "Forward PEG ratio (Trailing P/E / Growth Rate)",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_peg_ratio.fc.fwd_peg_ratio",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.fwd_peg_ratio",
+      "sql": "fc.fwd_peg_ratio",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "growth_rate_pct",
+      "description": "Estimated annual fundamental growth rate percentage (clamped between -20% and +35% max)",
+      "id": "sigmarail.field.screener_forecast_models_daily.growth_rate_pct.fc.growth_rate_pct",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.growth_rate_pct",
+      "sql": "fc.growth_rate_pct",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "historical_median_pe",
+      "description": "Historical normal median P/E multiple baseline (bounded between 10x and 30x)",
+      "id": "sigmarail.field.screener_forecast_models_daily.historical_median_pe.fc.historical_median_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.historical_median_pe",
+      "sql": "fc.historical_median_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "model_type",
+      "description": "Forecast model methodology identifier",
+      "id": "sigmarail.field.screener_forecast_models_daily.model_type.fc.model_type",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.model_type",
+      "sql": "fc.model_type",
+      "table": "screener_forecast_models_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "target_price_15x",
+      "description": "Graham 15x Fair Value target price based on forward EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.target_price_15x.fc.target_price_15x",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.target_price_15x",
+      "sql": "fc.target_price_15x",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "target_price_normal_pe",
+      "description": "2-year target price at historical normal median P/E multiple",
+      "id": "sigmarail.field.screener_forecast_models_daily.target_price_normal_pe.fc.target_price_normal_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.target_price_normal_pe",
+      "sql": "fc.target_price_normal_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_spread_pct",
+      "description": "Valuation spread % vs fair value baseline",
+      "id": "sigmarail.field.screener_forecast_models_daily.valuation_spread_pct.fc.valuation_spread_pct",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.valuation_spread_pct",
+      "sql": "fc.valuation_spread_pct",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_status",
+      "description": "Categorical valuation tier (Significantly Undervalued, etc.)",
+      "id": "sigmarail.field.screener_forecast_models_daily.valuation_status.fc.valuation_status",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fc.valuation_status",
+      "sql": "fc.valuation_status",
+      "table": "screener_forecast_models_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "fwd_cagr_2y_normal_pe",
+      "description": "Expected 2-year annualized rate of return (CAGR %) if price converges to normal P/E",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_cagr_2y_normal_pe.fwd_cagr_2y_normal_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fwd_cagr_2y_normal_pe",
+      "sql": "fc.fwd_cagr_2y_normal_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_eps_1y",
+      "description": "1-year forward projected diluted EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_eps_1y.fwd_eps_1y",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fwd_eps_1y",
+      "sql": "fc.fwd_eps_1y",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_eps_2y",
+      "description": "2-year forward projected diluted EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_eps_2y.fwd_eps_2y",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fwd_eps_2y",
+      "sql": "fc.fwd_eps_2y",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fwd_peg_ratio",
+      "description": "Forward PEG ratio (Trailing P/E / Growth Rate)",
+      "id": "sigmarail.field.screener_forecast_models_daily.fwd_peg_ratio.fwd_peg_ratio",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "fwd_peg_ratio",
+      "sql": "fc.fwd_peg_ratio",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "growth_rate_pct",
+      "description": "Estimated annual fundamental growth rate percentage (clamped between -20% and +35% max)",
+      "id": "sigmarail.field.screener_forecast_models_daily.growth_rate_pct.growth_rate_pct",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "growth_rate_pct",
+      "sql": "fc.growth_rate_pct",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "historical_median_pe",
+      "description": "Historical normal median P/E multiple baseline (bounded between 10x and 30x)",
+      "id": "sigmarail.field.screener_forecast_models_daily.historical_median_pe.historical_median_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "historical_median_pe",
+      "sql": "fc.historical_median_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "model_type",
+      "description": "Forecast model methodology identifier",
+      "id": "sigmarail.field.screener_forecast_models_daily.model_type.model_type",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "model_type",
+      "sql": "fc.model_type",
+      "table": "screener_forecast_models_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "target_price_15x",
+      "description": "Graham 15x Fair Value target price based on forward EPS",
+      "id": "sigmarail.field.screener_forecast_models_daily.target_price_15x.target_price_15x",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "target_price_15x",
+      "sql": "fc.target_price_15x",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "target_price_normal_pe",
+      "description": "2-year target price at historical normal median P/E multiple",
+      "id": "sigmarail.field.screener_forecast_models_daily.target_price_normal_pe.target_price_normal_pe",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "target_price_normal_pe",
+      "sql": "fc.target_price_normal_pe",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_spread_pct",
+      "description": "Valuation spread % vs fair value baseline",
+      "id": "sigmarail.field.screener_forecast_models_daily.valuation_spread_pct.valuation_spread_pct",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "valuation_spread_pct",
+      "sql": "fc.valuation_spread_pct",
+      "table": "screener_forecast_models_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_status",
+      "description": "Categorical valuation tier (Significantly Undervalued, etc.)",
+      "id": "sigmarail.field.screener_forecast_models_daily.valuation_status.valuation_status",
+      "lineage_roots": [
+        "sep",
+        "sf1",
+        "sfp",
+        "tickers"
+      ],
+      "metadata": {},
+      "name": "valuation_status",
+      "sql": "fc.valuation_status",
+      "table": "screener_forecast_models_daily",
+      "type": "LowCardinality(String)"
+    },
+    {
+      "column": "accumulation_distribution_rating",
+      "description": "From accumulation_distribution_rating",
+      "id": "sigmarail.field.screener_ratings_daily.accumulation_distribution_rating.accumulation_distribution_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From accumulation_distribution_rating",
+        "id": "sigmarail.mart.screener_ratings_daily.accumulation_distribution_rating",
+        "kind": "concept",
+        "title": "accumulation distribution rating"
+      },
+      "name": "accumulation_distribution_rating",
+      "sql": "rt.accumulation_distribution_rating",
+      "table": "screener_ratings_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "classification",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.classification.classification",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.classification",
+        "kind": "concept",
+        "title": "classification"
+      },
+      "name": "classification",
+      "sql": "rt.classification",
+      "table": "screener_ratings_daily",
+      "type": "Enum8('STRONG_BUY' = 1, 'BUY' = 2, 'WATCHLIST' = 3, 'MONITOR' = 4, 'AVOID' = 5)"
+    },
+    {
+      "column": "dividend_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.dividend_rating.dividend_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.dividend_rating",
+        "kind": "concept",
+        "title": "dividend rating"
+      },
+      "name": "dividend_rating",
+      "sql": "rt.dividend_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fundamental_composite",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.fundamental_composite.fundamental_composite",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.fundamental_composite",
+        "kind": "concept",
+        "title": "fundamental composite"
+      },
+      "name": "fundamental_composite",
+      "sql": "rt.fundamental_composite",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "growth_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.growth_rating.growth_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.growth_rating",
+        "kind": "concept",
+        "title": "growth rating"
+      },
+      "name": "growth_rating",
+      "sql": "rt.growth_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "has_vcp_breakout",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.has_vcp_breakout.has_vcp_breakout",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.has_vcp_breakout",
+        "kind": "concept",
+        "title": "has vcp breakout"
+      },
+      "name": "has_vcp_breakout",
+      "sql": "rt.has_vcp_breakout",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "has_vcp_setup",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.has_vcp_setup.has_vcp_setup",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.has_vcp_setup",
+        "kind": "concept",
+        "title": "has vcp setup"
+      },
+      "name": "has_vcp_setup",
+      "sql": "rt.has_vcp_setup",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "health_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.health_rating.health_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.health_rating",
+        "kind": "concept",
+        "title": "health rating"
+      },
+      "name": "health_rating",
+      "sql": "rt.health_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "high_growth_momentum_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.high_growth_momentum_rating.high_growth_momentum_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.high_growth_momentum_rating",
+        "kind": "concept",
+        "title": "high growth momentum rating"
+      },
+      "name": "high_growth_momentum_rating",
+      "sql": "rt.high_growth_momentum_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "is_bull_market",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_bull_market.is_bull_market",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_bull_market",
+        "kind": "concept",
+        "title": "is bull market"
+      },
+      "name": "is_bull_market",
+      "sql": "rt.is_bull_market",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "is_leading_industry",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_leading_industry.is_leading_industry",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_leading_industry",
+        "kind": "concept",
+        "title": "is leading industry"
+      },
+      "name": "is_leading_industry",
+      "sql": "rt.is_leading_industry",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "is_stage_2_advancing",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_stage_2_advancing.is_stage_2_advancing",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_stage_2_advancing",
+        "kind": "concept",
+        "title": "is stage 2 advancing"
+      },
+      "name": "is_stage_2_advancing",
+      "sql": "rt.is_stage_2_advancing",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "minervini_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.minervini_score.minervini_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.minervini_score",
+        "kind": "concept",
+        "title": "minervini score"
+      },
+      "name": "minervini_score",
+      "sql": "rt.minervini_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "obv_score",
+      "description": "ADR obv_score",
+      "id": "sigmarail.field.screener_ratings_daily.obv_score.obv_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR obv_score",
+        "id": "sigmarail.mart.screener_ratings_daily.obv_score",
+        "kind": "concept",
+        "title": "obv score"
+      },
+      "name": "obv_score",
+      "sql": "rt.obv_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "oneil_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.oneil_score.oneil_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.oneil_score",
+        "kind": "concept",
+        "title": "oneil score"
+      },
+      "name": "oneil_score",
+      "sql": "rt.oneil_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "overall_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.overall_score.overall_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.overall_score",
+        "kind": "concept",
+        "title": "overall score"
+      },
+      "name": "overall_score",
+      "sql": "rt.overall_score",
+      "table": "screener_ratings_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "pocket_pivot_score",
+      "description": "ADR pocket_pivot_score",
+      "id": "sigmarail.field.screener_ratings_daily.pocket_pivot_score.pocket_pivot_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR pocket_pivot_score",
+        "id": "sigmarail.mart.screener_ratings_daily.pocket_pivot_score",
+        "kind": "concept",
+        "title": "pocket pivot score"
+      },
+      "name": "pocket_pivot_score",
+      "sql": "rt.pocket_pivot_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "profitability_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.profitability_rating.profitability_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.profitability_rating",
+        "kind": "concept",
+        "title": "profitability rating"
+      },
+      "name": "profitability_rating",
+      "sql": "rt.profitability_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "accumulation_distribution_rating",
+      "description": "From accumulation_distribution_rating",
+      "id": "sigmarail.field.screener_ratings_daily.accumulation_distribution_rating.rt.accumulation_distribution_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From accumulation_distribution_rating",
+        "id": "sigmarail.mart.screener_ratings_daily.accumulation_distribution_rating",
+        "kind": "concept",
+        "title": "accumulation distribution rating"
+      },
+      "name": "rt.accumulation_distribution_rating",
+      "sql": "rt.accumulation_distribution_rating",
+      "table": "screener_ratings_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "classification",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.classification.rt.classification",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.classification",
+        "kind": "concept",
+        "title": "classification"
+      },
+      "name": "rt.classification",
+      "sql": "rt.classification",
+      "table": "screener_ratings_daily",
+      "type": "Enum8('STRONG_BUY' = 1, 'BUY' = 2, 'WATCHLIST' = 3, 'MONITOR' = 4, 'AVOID' = 5)"
+    },
+    {
+      "column": "dividend_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.dividend_rating.rt.dividend_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.dividend_rating",
+        "kind": "concept",
+        "title": "dividend rating"
+      },
+      "name": "rt.dividend_rating",
+      "sql": "rt.dividend_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "fundamental_composite",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.fundamental_composite.rt.fundamental_composite",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.fundamental_composite",
+        "kind": "concept",
+        "title": "fundamental composite"
+      },
+      "name": "rt.fundamental_composite",
+      "sql": "rt.fundamental_composite",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "growth_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.growth_rating.rt.growth_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.growth_rating",
+        "kind": "concept",
+        "title": "growth rating"
+      },
+      "name": "rt.growth_rating",
+      "sql": "rt.growth_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "has_vcp_breakout",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.has_vcp_breakout.rt.has_vcp_breakout",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.has_vcp_breakout",
+        "kind": "concept",
+        "title": "has vcp breakout"
+      },
+      "name": "rt.has_vcp_breakout",
+      "sql": "rt.has_vcp_breakout",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "has_vcp_setup",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.has_vcp_setup.rt.has_vcp_setup",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.has_vcp_setup",
+        "kind": "concept",
+        "title": "has vcp setup"
+      },
+      "name": "rt.has_vcp_setup",
+      "sql": "rt.has_vcp_setup",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "health_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.health_rating.rt.health_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.health_rating",
+        "kind": "concept",
+        "title": "health rating"
+      },
+      "name": "rt.health_rating",
+      "sql": "rt.health_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "high_growth_momentum_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.high_growth_momentum_rating.rt.high_growth_momentum_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.high_growth_momentum_rating",
+        "kind": "concept",
+        "title": "high growth momentum rating"
+      },
+      "name": "rt.high_growth_momentum_rating",
+      "sql": "rt.high_growth_momentum_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "is_bull_market",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_bull_market.rt.is_bull_market",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_bull_market",
+        "kind": "concept",
+        "title": "is bull market"
+      },
+      "name": "rt.is_bull_market",
+      "sql": "rt.is_bull_market",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "is_leading_industry",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_leading_industry.rt.is_leading_industry",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_leading_industry",
+        "kind": "concept",
+        "title": "is leading industry"
+      },
+      "name": "rt.is_leading_industry",
+      "sql": "rt.is_leading_industry",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "is_stage_2_advancing",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.is_stage_2_advancing.rt.is_stage_2_advancing",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.is_stage_2_advancing",
+        "kind": "concept",
+        "title": "is stage 2 advancing"
+      },
+      "name": "rt.is_stage_2_advancing",
+      "sql": "rt.is_stage_2_advancing",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "minervini_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.minervini_score.rt.minervini_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.minervini_score",
+        "kind": "concept",
+        "title": "minervini score"
+      },
+      "name": "rt.minervini_score",
+      "sql": "rt.minervini_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "obv_score",
+      "description": "ADR obv_score",
+      "id": "sigmarail.field.screener_ratings_daily.obv_score.rt.obv_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR obv_score",
+        "id": "sigmarail.mart.screener_ratings_daily.obv_score",
+        "kind": "concept",
+        "title": "obv score"
+      },
+      "name": "rt.obv_score",
+      "sql": "rt.obv_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "oneil_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.oneil_score.rt.oneil_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.oneil_score",
+        "kind": "concept",
+        "title": "oneil score"
+      },
+      "name": "rt.oneil_score",
+      "sql": "rt.oneil_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "overall_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.overall_score.rt.overall_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.overall_score",
+        "kind": "concept",
+        "title": "overall score"
+      },
+      "name": "rt.overall_score",
+      "sql": "rt.overall_score",
+      "table": "screener_ratings_daily",
+      "type": "Nullable(Float32)"
+    },
+    {
+      "column": "pocket_pivot_score",
+      "description": "ADR pocket_pivot_score",
+      "id": "sigmarail.field.screener_ratings_daily.pocket_pivot_score.rt.pocket_pivot_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR pocket_pivot_score",
+        "id": "sigmarail.mart.screener_ratings_daily.pocket_pivot_score",
+        "kind": "concept",
+        "title": "pocket pivot score"
+      },
+      "name": "rt.pocket_pivot_score",
+      "sql": "rt.pocket_pivot_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "profitability_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.profitability_rating.rt.profitability_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.profitability_rating",
+        "kind": "concept",
+        "title": "profitability rating"
+      },
+      "name": "rt.profitability_rating",
+      "sql": "rt.profitability_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "screen_combo_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_combo_quarterly.rt.screen_combo_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_combo_quarterly",
+        "kind": "concept",
+        "title": "screen combo quarterly"
+      },
+      "name": "rt.screen_combo_quarterly",
+      "sql": "rt.screen_combo_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_combo_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_combo_yearly.rt.screen_combo_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_combo_yearly",
+        "kind": "concept",
+        "title": "screen combo yearly"
+      },
+      "name": "rt.screen_combo_yearly",
+      "sql": "rt.screen_combo_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_eps_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_eps_quarterly.rt.screen_eps_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_eps_quarterly",
+        "kind": "concept",
+        "title": "screen eps quarterly"
+      },
+      "name": "rt.screen_eps_quarterly",
+      "sql": "rt.screen_eps_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_eps_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_eps_yearly.rt.screen_eps_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_eps_yearly",
+        "kind": "concept",
+        "title": "screen eps yearly"
+      },
+      "name": "rt.screen_eps_yearly",
+      "sql": "rt.screen_eps_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_revenue_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_revenue_quarterly.rt.screen_revenue_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_revenue_quarterly",
+        "kind": "concept",
+        "title": "screen revenue quarterly"
+      },
+      "name": "rt.screen_revenue_quarterly",
+      "sql": "rt.screen_revenue_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_revenue_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_revenue_yearly.rt.screen_revenue_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_revenue_yearly",
+        "kind": "concept",
+        "title": "screen revenue yearly"
+      },
+      "name": "rt.screen_revenue_yearly",
+      "sql": "rt.screen_revenue_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screens_passed",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screens_passed.rt.screens_passed",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screens_passed",
+        "kind": "concept",
+        "title": "screens passed"
+      },
+      "name": "rt.screens_passed",
+      "sql": "rt.screens_passed",
+      "table": "screener_ratings_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "setup_quality_rating",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.setup_quality_rating.rt.setup_quality_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.setup_quality_rating",
+        "kind": "concept",
+        "title": "setup quality rating"
+      },
+      "name": "rt.setup_quality_rating",
+      "sql": "rt.setup_quality_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "technical_composite",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.technical_composite.rt.technical_composite",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.technical_composite",
+        "kind": "concept",
+        "title": "technical composite"
+      },
+      "name": "rt.technical_composite",
+      "sql": "rt.technical_composite",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "technical_rating",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.technical_rating.rt.technical_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.technical_rating",
+        "kind": "concept",
+        "title": "technical rating"
+      },
+      "name": "rt.technical_rating",
+      "sql": "rt.technical_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.valuation_rating.rt.valuation_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.valuation_rating",
+        "kind": "concept",
+        "title": "valuation rating"
+      },
+      "name": "rt.valuation_rating",
+      "sql": "rt.valuation_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "volume_ratio_score",
+      "description": "ADR volume_ratio_score",
+      "id": "sigmarail.field.screener_ratings_daily.volume_ratio_score.rt.volume_ratio_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR volume_ratio_score",
+        "id": "sigmarail.mart.screener_ratings_daily.volume_ratio_score",
+        "kind": "concept",
+        "title": "volume ratio score"
+      },
+      "name": "rt.volume_ratio_score",
+      "sql": "rt.volume_ratio_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "volume_score",
+      "description": "ADR volume_score",
+      "id": "sigmarail.field.screener_ratings_daily.volume_score.rt.volume_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR volume_score",
+        "id": "sigmarail.mart.screener_ratings_daily.volume_score",
+        "kind": "concept",
+        "title": "volume score"
+      },
+      "name": "rt.volume_score",
+      "sql": "rt.volume_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "weinstein_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.weinstein_score.rt.weinstein_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.weinstein_score",
+        "kind": "concept",
+        "title": "weinstein score"
+      },
+      "name": "rt.weinstein_score",
+      "sql": "rt.weinstein_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "screen_combo_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_combo_quarterly.screen_combo_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_combo_quarterly",
+        "kind": "concept",
+        "title": "screen combo quarterly"
+      },
+      "name": "screen_combo_quarterly",
+      "sql": "rt.screen_combo_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_combo_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_combo_yearly.screen_combo_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_combo_yearly",
+        "kind": "concept",
+        "title": "screen combo yearly"
+      },
+      "name": "screen_combo_yearly",
+      "sql": "rt.screen_combo_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_eps_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_eps_quarterly.screen_eps_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_eps_quarterly",
+        "kind": "concept",
+        "title": "screen eps quarterly"
+      },
+      "name": "screen_eps_quarterly",
+      "sql": "rt.screen_eps_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_eps_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_eps_yearly.screen_eps_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_eps_yearly",
+        "kind": "concept",
+        "title": "screen eps yearly"
+      },
+      "name": "screen_eps_yearly",
+      "sql": "rt.screen_eps_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_revenue_quarterly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_revenue_quarterly.screen_revenue_quarterly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_revenue_quarterly",
+        "kind": "concept",
+        "title": "screen revenue quarterly"
+      },
+      "name": "screen_revenue_quarterly",
+      "sql": "rt.screen_revenue_quarterly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screen_revenue_yearly",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screen_revenue_yearly.screen_revenue_yearly",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screen_revenue_yearly",
+        "kind": "concept",
+        "title": "screen revenue yearly"
+      },
+      "name": "screen_revenue_yearly",
+      "sql": "rt.screen_revenue_yearly",
+      "table": "screener_ratings_daily",
+      "type": "Bool"
+    },
+    {
+      "column": "screens_passed",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.screens_passed.screens_passed",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.screens_passed",
+        "kind": "concept",
+        "title": "screens passed"
+      },
+      "name": "screens_passed",
+      "sql": "rt.screens_passed",
+      "table": "screener_ratings_daily",
+      "type": "UInt8"
+    },
+    {
+      "column": "setup_quality_rating",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.setup_quality_rating.setup_quality_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.setup_quality_rating",
+        "kind": "concept",
+        "title": "setup quality rating"
+      },
+      "name": "setup_quality_rating",
+      "sql": "rt.setup_quality_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "technical_composite",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.technical_composite.technical_composite",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.technical_composite",
+        "kind": "concept",
+        "title": "technical composite"
+      },
+      "name": "technical_composite",
+      "sql": "rt.technical_composite",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "technical_rating",
+      "description": "From technical_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.technical_rating.technical_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From technical_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.technical_rating",
+        "kind": "concept",
+        "title": "technical rating"
+      },
+      "name": "technical_rating",
+      "sql": "rt.technical_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "valuation_rating",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.valuation_rating.valuation_rating",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.valuation_rating",
+        "kind": "concept",
+        "title": "valuation rating"
+      },
+      "name": "valuation_rating",
+      "sql": "rt.valuation_rating",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "volume_ratio_score",
+      "description": "ADR volume_ratio_score",
+      "id": "sigmarail.field.screener_ratings_daily.volume_ratio_score.volume_ratio_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR volume_ratio_score",
+        "id": "sigmarail.mart.screener_ratings_daily.volume_ratio_score",
+        "kind": "concept",
+        "title": "volume ratio score"
+      },
+      "name": "volume_ratio_score",
+      "sql": "rt.volume_ratio_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "volume_score",
+      "description": "ADR volume_score",
+      "id": "sigmarail.field.screener_ratings_daily.volume_score.volume_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "ADR volume_score",
+        "id": "sigmarail.mart.screener_ratings_daily.volume_score",
+        "kind": "concept",
+        "title": "volume score"
+      },
+      "name": "volume_score",
+      "sql": "rt.volume_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    },
+    {
+      "column": "weinstein_score",
+      "description": "From screener_ratings",
+      "id": "sigmarail.field.screener_ratings_daily.weinstein_score.weinstein_score",
+      "lineage_roots": [
+        "daily",
+        "sep",
+        "sf1",
+        "sfp",
+        "sp500",
+        "tickers"
+      ],
+      "metadata": {
+        "computability": "sigmarail_native",
+        "definition": "From screener_ratings",
+        "id": "sigmarail.mart.screener_ratings_daily.weinstein_score",
+        "kind": "concept",
+        "title": "weinstein score"
+      },
+      "name": "weinstein_score",
+      "sql": "rt.weinstein_score",
+      "table": "screener_ratings_daily",
+      "type": "Float32"
+    }
+  ],
+  "version": 1
+}

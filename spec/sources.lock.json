@@ -1,0 +1,64 @@
+{
+  "lock_version": 1,
+  "sources": {
+    "lean": {
+      "content_sha256": "a8af273dc07dc5373bae35c4d671930cee9490b05e76d25d9bd02d1a72365968",
+      "hashed_paths": [
+        "Algorithm.Framework/Alphas",
+        "Algorithm.Framework/Portfolio",
+        "Algorithm.Framework/Execution",
+        "Algorithm.Framework/Risk",
+        "Algorithm.Framework/Selection",
+        "Algorithm/Selection",
+        "Algorithm/Execution",
+        "Algorithm/Risk",
+        "Algorithm/Alphas",
+        "Algorithm/Portfolio"
+      ],
+      "path": "Lean",
+      "revision": "bdcd04a2b6ddf5a36427c4b486f48eab57edbc9e"
+    },
+    "sigmarail": {
+      "content_sha256": "46ec6533b171cf196066b335aff4a4244e960bf8050c6cddf40721429180e0b3",
+      "hashed_paths": [
+        "tools/generate_lineage_manifest.py",
+        "src/sigmarail/sql/schema-manifest.json",
+        "src/sigmarail/sql/schema",
+        "spec/lineage-manifest.json"
+      ],
+      "path": "sigmarail",
+      "revision": null
+    },
+    "studio": {
+      "content_sha256": "f49c91198bb75ea3fb16be6b7acce9b58ac910ce0a2a1ab06a495ee902a08fb9",
+      "hashed_paths": [
+        "vera_studio_mcp/domains/strategy.py",
+        "vera_studio_mcp/server.py",
+        "AGENTS.md"
+      ],
+      "path": "VeraScreeningStudio",
+      "revision": "8bbecf6ebdabb7a5ddae44edcd72203e5d683b34"
+    },
+    "trading_lab": {
+      "content_sha256": "b7cdb5823b069bfd9792ae0f749d908aaf8b1439a725bd65a88f3370031778e0",
+      "hashed_paths": [
+        "vera_lab/ir",
+        "vera_lab/runtime"
+      ],
+      "path": "LeanProjects/VeraTradingLab",
+      "revision": "dbe9395d06e3c05949726ff162a9ce867c5b7414"
+    },
+    "vera_base": {
+      "content_sha256": "b4438d3a7f050a6b7e8fcb07f25a478f743ab884896d64da3f8b94ff0f3176f7",
+      "hashed_paths": [
+        "src/vera_query_core/ir/universe_query_v1.py",
+        "src/vera_query_core/ir/l7_from.py",
+        "src/vera_query_core/ir/universe_v1_column_registry.py",
+        "src/vera_query_core/strategy/pipeline.py",
+        "src/vera_query_core/data/runtime_param_table.json"
+      ],
+      "path": "VeraBase",
+      "revision": "4f9f75df627d66f9d00e175ada4e7d23a39ee2e5"
+    }
+  }
+}
