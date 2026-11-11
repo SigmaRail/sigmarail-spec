@@ -34,13 +34,13 @@ not depend on the larger SigmaRail package at runtime. Check or refresh that cop
 reviewing runtime changes:
 
 ```bash
-python sigmarail-spec/tools/sync_lean_vendor.py --destination LeanProjects/VeraTradingLab/vera_spec
-python sigmarail-spec/tools/sync_lean_vendor.py --destination LeanProjects/VeraTradingLab/vera_spec --write
+python sigmarail-spec/tools/sync_lean_vendor.py --destination path/to/lean-project/sigmarail_spec
+python sigmarail-spec/tools/sync_lean_vendor.py --destination path/to/lean-project/sigmarail_spec --write
 ```
 
 The first command checks hashes without writing; the second writes the canonical expression,
-evaluator, and entry-trigger modules plus a manifest. The same distribution ships a `vera_spec`
-compatibility import namespace for Python consumers that are migrating incrementally.
+evaluator, and entry-trigger modules plus a manifest. A legacy compatibility import namespace is
+also shipped for Python consumers that are migrating incrementally.
 
 ## Runtime retrieval API
 
@@ -59,8 +59,8 @@ schema_text = get_document_text("sigmarail-spec://v1/data/schema")
 `get_document()` returns a new dictionary each call. `get_document_text()` returns the exact
 packaged JSON text. Both accept IDs, URIs, or package-relative paths. The expression runtime is
 importable from `sigmarail_spec.expr`, `sigmarail_spec.evaluate`, and `sigmarail_spec.entry_trigger_ast`; those
-modules were bootstrapped from VeraSpec once, and are canonical here thereafter. Historical origin
-and the current scope boundary are recorded in `metadata/runtime-provenance.json`.
+modules were migrated from the previous shared expression package and are canonical here thereafter.
+Historical origin and the current scope boundary are recorded in `metadata/runtime-provenance.json`.
 
 ## MCP delivery
 
@@ -77,9 +77,9 @@ tools while those remain outside the cleaned SigmaRail core.
 
 - `data/lineage.json`: generated tables, columns, Sharadar roots, and exclusions.
 - `data/transforms.json`: `xform_*` target, input/output, order, source SQL path, and content hash.
-- `data/fields.json`: queryable SigmaRail field subset matched to the existing VeraBase registry.
+- `data/fields.json`: queryable SigmaRail field subset matched to the existing base query field registry.
 - `data/expressions.json` and `data/expressions/`: canonical expression JSON Schema and domain slices.
-- `data/strategy/`: Studio authoring, universe query, and executable `VeraLabV1` schemas.
+- `data/strategy/`: Studio authoring, universe query, and executable trading-strategy version 1 schemas.
 - `data/runtime-capabilities.json`: generated LEAN model/action parameters and action behavior flags.
 - `data/index.json`: compact retrieval catalog for agents and MCP Resources.
 
