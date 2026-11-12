@@ -78,10 +78,21 @@ tools while those remain outside the cleaned SigmaRail core.
 - `data/lineage.json`: generated tables, columns, Sharadar roots, and exclusions.
 - `data/transforms.json`: `xform_*` target, input/output, order, source SQL path, and content hash.
 - `data/fields.json`: queryable SigmaRail field subset matched to the existing base query field registry.
+- `data/query-v1.json`: bounded, module-aware data-query request schema.
+- `modules/core.json`: generated built-in core datasets, reviewed joins, and capabilities.
+- `modules/studio.json`: Studio's real module activation catalog, defaults, and compatibility requirements.
+- `modules/module-manifest-v1.schema.json`: descriptor schema for core and optional modules.
 - `data/expressions.json` and `data/expressions/`: canonical expression JSON Schema and domain slices.
 - `data/strategy/`: Studio authoring, universe query, and executable trading-strategy version 1 schemas.
 - `data/runtime-capabilities.json`: generated LEAN model/action parameters and action behavior flags.
 - `data/index.json`: compact retrieval catalog for agents and MCP Resources.
+
+See [the module ownership and integration proposal](docs/MODULE_ARCHITECTURE.md) for the boundary
+between SigmaRail core, Spec, Studio, Lean, and optional provider/knowledge modules. The module
+manifest schema and built-in core descriptor are generated and exposed as Spec documents. Studio's
+current module activation catalog is also generated from its source configuration. The generic
+third-party module manifest remains an evolving v1 draft: external package discovery, activation,
+and execution are not implemented, so this package does not yet claim plug-in compatibility.
 
 SigmaRail SQL core currently does not evaluate expression ASTs. The expression section remains because
 Studio and TradingLab consume that runtime contract. Domain expression documents point to the

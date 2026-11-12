@@ -24,7 +24,7 @@ OUTPUT_ROOT = ROOT / "src" / "sigmarail_spec" / "data"
 SOURCES: dict[str, dict[str, Any]] = {
     "sigmarail": {
         "path": "sigmarail",
-        "paths": ["tools/generate_lineage_manifest.py", "src/sigmarail/sql/schema-manifest.json", "src/sigmarail/sql/schema", "spec/lineage-manifest.json"],
+        "paths": ["tools/generate_lineage_manifest.py", "src/sigmarail/query.py", "src/sigmarail/universe.py", "src/sigmarail/sql/schema-manifest.json", "src/sigmarail/sql/schema", "spec/lineage-manifest.json", "src/sigmarail/spec/module-manifest.json"],
         "git": False,
     },
     "vera_base": {
@@ -54,13 +54,14 @@ SOURCES: dict[str, dict[str, Any]] = {
         "git": True,
     },
     "studio": {
-        "path": "VeraScreeningStudio",
-        "paths": ["vera_studio_mcp/domains/strategy.py", "vera_studio_mcp/server.py", "AGENTS.md"],
+        "path": "sigmarail",
+        "paths": ["studio/api/lean_universe.py", "studio/config/urls.py", "studio/sigmarail_studio_mcp/domains/strategy.py", "studio/sigmarail_studio_mcp/domains/core.py", "studio/sigmarail_studio_mcp/server.py", "studio/sigmarail_studio_mcp/data/module-catalog.json", "studio/AGENTS.md"],
         "git": True,
     },
 }
 
 MCP_TOOL_DOMAINS = {
+    "data_query": ("core_",),
     "screening": ("screen_",),
     "strategy_authoring": ("strategy_", "lean_discover_types"),
     "backtesting": ("backtest_", "regime_", "optimize_"),
@@ -198,16 +199,24 @@ def _annotation_json_schema(annotation: ast.expr | None) -> dict[str, Any]:
     return {}
 
 
-def _studio_mcp_tools(workspace: Path) -> dict[str, list[dict[str, Any]]]:
+def _studio_mcp_tools(workspace: Path, data_query_schema: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
     """Generate MCP tool contracts from Studio's decorated function signatures and docs."""
-    path = workspace / "VeraScreeningStudio/vera_studio_mcp/server.py"
+    path = workspace / "sigmarail/studio/sigmarail_studio_mcp/server.py"
     module = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     tools: dict[str, list[dict[str, Any]]] = {domain: [] for domain in MCP_TOOL_DOMAINS}
     for node in ast.walk(module):
         if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             continue
-        if not any(ast.unparse(decorator).startswith("mcp.tool") for decorator in node.decorator_list):
+        tool_decorator = next(
+            (decorator for decorator in node.decorator_list
+             if isinstance(decorator, ast.Call)
+             and isinstance(decorator.func, ast.Name)
+             and decorator.func.id == "_tool"),
+            None,
+        )
+        if tool_decorator is None or not tool_decorator.args or not isinstance(tool_decorator.args[0], ast.Constant):
             continue
+        module_id = str(tool_decorator.args[0].value)
         # FastMCP skips the injected Context parameter from client-facing input schemas.
         args = [arg for arg in [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
                 if arg.arg not in ("self", "cls", "ctx", "context")]
@@ -233,7 +242,11 @@ def _studio_mcp_tools(workspace: Path) -> dict[str, list[dict[str, Any]]]:
         for arg in args:
             if arg.arg in ("self", "cls"):
                 continue
-            schema = _annotation_json_schema(arg.annotation)
+            schema = (
+                data_query_schema
+                if arg.annotation is not None and ast.unparse(arg.annotation) == "core.DataQueryV1"
+                else _annotation_json_schema(arg.annotation)
+            )
             schema["title"] = arg.arg.replace("_", " ").title()
             properties[arg.arg] = schema
             if arg.arg not in defaults_by_name:
@@ -255,6 +268,7 @@ def _studio_mcp_tools(workspace: Path) -> dict[str, list[dict[str, Any]]]:
             {
                 "id": f"studio.mcp.tool.{node.name}",
                 "name": node.name,
+                "module": module_id,
                 "description": ast.get_docstring(node) or "",
                 "input_schema": input_schema,
                 "output_schema": output_schema,
@@ -328,6 +342,7 @@ def _source_models(workspace: Path) -> dict[str, Any]:
         str(workspace / "LeanProjects/VeraTradingLab"),
     ]
     from pydantic import TypeAdapter
+    from sigmarail_spec.data_query import DataQueryV1
     import sigmarail_spec.expr as expr
     from sigmarail_spec.expr import BoolExprItem, SpecExpr
     from vera_lab.ir.lean_framework_json import LeanFrameworkV1Document
@@ -401,13 +416,14 @@ def _source_models(workspace: Path) -> dict[str, Any]:
             "lean_framework_schema": LeanFrameworkV1Document.model_json_schema(),
             "executable_strategy_schema": VeraLabV1Document.model_json_schema(),
             "universe_query_schema": UniverseQueryV1.model_json_schema(),
+            "data_query_schema": DataQueryV1.model_json_schema(),
         },
         "runtime_capabilities": runtime,
         "runtime_types_by_slot": {
             slot: sorted(type_ids) for slot, type_ids in slot_type_ids.items()
         },
         "unclassified_runtime_type_ids": sorted(set(runtime_types) - classified_type_ids),
-        "mcp_tools": _studio_mcp_tools(workspace),
+        "mcp_tools": _studio_mcp_tools(workspace, DataQueryV1.model_json_schema()),
         "universe_field_map": {
             key: {"sql": value[0], "output_alias": value[1]}
             for key, value in sorted(field_map.items())
@@ -469,9 +485,22 @@ STRATEGY_SLOTS = {
 
 def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]:
     lineage = _sigmarail_lineage(workspace)
+    core_module = json.loads(
+        (workspace / "sigmarail/src/sigmarail/spec/module-manifest.json").read_text(encoding="utf-8")
+    )
+    studio_modules = json.loads(
+        (workspace / "sigmarail/studio/sigmarail_studio_mcp/data/module-catalog.json").read_text(encoding="utf-8")
+    )
+    module_schema = json.loads((ROOT / "spec/modules/module-manifest-v1.schema.json").read_text(encoding="utf-8"))
     entities = _load_entities(workspace)
     transforms = _transforms(workspace, lineage)
     models = _source_models(workspace)
+    declared_studio_modules = {row["name"] for row in studio_modules["modules"]}
+    emitted_studio_modules = {
+        tool["module"] for tools in models["mcp_tools"].values() for tool in tools
+    }
+    if not emitted_studio_modules <= declared_studio_modules:
+        raise ValueError(f"MCP tools reference undeclared Studio modules: {sorted(emitted_studio_modules - declared_studio_modules)}")
     fields = _field_catalog(lineage, models, entities)
     annotations_path = ROOT / "metadata/annotations.json"
     annotations_text = annotations_path.read_text(encoding="utf-8")
@@ -514,6 +543,9 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
     }
     data = {
         "lineage.json": lineage,
+        "modules/core.json": core_module,
+        "modules/studio.json": studio_modules,
+        "modules/module-manifest-v1.schema.json": module_schema,
         "transforms.json": transforms,
         "fields.json": fields,
         "expressions.json": models["expressions"],
@@ -539,6 +571,7 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
             "unclassified_runtime_type_ids": models["unclassified_runtime_type_ids"],
         },
         "strategy/universe-query.json": strategy["universe_query_schema"],
+        "data/query-v1.json": models["strategy"]["data_query_schema"],
         "runtime-capabilities.json": capabilities,
         "annotations.json": annotations,
         **{
@@ -562,7 +595,7 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
         },
         "mcp/index.json": {
             "version": 1,
-            "source": "VeraScreeningStudio/vera_studio_mcp/server.py",
+            "source": "sigmarail/studio/sigmarail_studio_mcp/server.py",
             "domains": {
                 domain: {
                     "document_uri": f"sigmarail-spec://v1/mcp/tools/{domain}",
@@ -571,7 +604,9 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
                 }
                 for domain, tools in models["mcp_tools"].items()
             },
-            "excluded_prefixes": ["catalog_", "kb_", "portfolio_", "research_"],
+            "activation_catalog": "sigmarail-spec://v1/modules/studio",
+            "default_modules": studio_modules["default_enabled"],
+            "optional_modules": [row["name"] for row in studio_modules["modules"] if not row["default_enabled"]],
         },
         **{
             f"mcp/tools/{domain}.json": {
@@ -588,6 +623,10 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
         ("semantics.annotations", "sigmarail-spec://v1/semantics/annotations", "Reviewed semantic annotations", "annotations.json"),
         ("data.transforms", "sigmarail-spec://v1/data/transforms", "SigmaRail SQL transform catalog", "transforms.json"),
         ("data.fields", "sigmarail-spec://v1/data/fields", "SigmaRail queryable field catalog", "fields.json"),
+        ("data.query", "sigmarail-spec://v1/data/query/v1", "Module-aware data query request schema", "data/query-v1.json"),
+        ("modules.core", "sigmarail-spec://v1/modules/core", "Built-in SigmaRail core module manifest", "modules/core.json"),
+        ("modules.studio", "sigmarail-spec://v1/modules/studio", "Studio module activation catalog", "modules/studio.json"),
+        ("modules.schema", "sigmarail-spec://v1/modules/schema", "SigmaRail module manifest schema v1", "modules/module-manifest-v1.schema.json"),
         *((f"data.fields.{domain}", f"sigmarail-spec://v1/data/fields/{domain}", f"SigmaRail {domain.replace('_', ' ')} fields", f"fields/{domain}.json") for domain in (*FIELD_DOMAINS, "other")),
         ("expressions.core", "sigmarail-spec://v1/expressions/core", "Expression AST and semantics", "expressions.json"),
         *((f"expressions.{domain}", f"sigmarail-spec://v1/expressions/{domain}", f"Expression contract for {domain.replace('_', ' ')}", f"expressions/{domain}.json") for domain in FIELD_DOMAINS),
@@ -605,6 +644,9 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
         "semantics.annotations": "Reviewed semantic annotations not derivable from source code.",
         "data.transforms": "Generated xform view targets, dependencies, outputs, and SQL provenance.",
         "data.fields": "Queryable SigmaRail fields matched to schema columns and current query mappings.",
+        "data.query": "Versioned bounded query AST over registered module datasets and declared joins.",
+        "modules.core": "SQL-generated module manifest for SigmaRail core datasets, fields, joins, and capabilities.",
+        "modules.schema": "JSON Schema for installing and describing SigmaRail core and optional modules.",
         "expressions.core": "Canonical expression AST, JSON schemas, evaluation semantics, and limits.",
         "strategy.authoring": "Studio PipelineDocument and universe-query authoring schemas.",
         "strategy.execution": "VeraLabV1 and LEAN framework execution schemas and slot index.",
@@ -635,12 +677,12 @@ def _render_documents(workspace: Path, lock: dict[str, Any]) -> dict[str, bytes]
     ]
     index = {
         "spec_id": "sigmarail-spec",
-        "spec_version": "0.1.0",
+        "spec_version": "0.2.0",
         "description": "Compact index for SigmaRail data, expressions, Studio authoring, and LEAN strategy capabilities.",
         "documents": documents,
-        "retrieval_order": ["index", "expressions.core", "data.fields", "strategy.authoring", "strategy.execution"],
+        "retrieval_order": ["index", "modules.core", "data.schema", "data.fields", "data.query", "expressions.core", "strategy.authoring", "strategy.execution"],
         "retrieval_profiles": {
-            "sharadar_query": ["index", "data.schema", "data.fields/{domain}", "data.transforms", "mcp.tools.screening"],
+            "sharadar_query": ["index", "modules.core", "data.schema", "data.fields/{domain}", "data.query", "data.transforms", "mcp.tools.screening"],
             "strategy_authoring": [
                 "index", "expressions.core", "data.fields/{domain}",
                 "strategy.authoring", "strategy/slots/{slot}",

@@ -14,6 +14,7 @@
         "title": "backtest_cancelArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_cancel",
       "output_schema": {
         "additionalProperties": true,
@@ -39,6 +40,7 @@
         "title": "backtest_compareArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_compare",
       "output_schema": {
         "additionalProperties": true,
@@ -60,6 +62,7 @@
         "title": "backtest_get_runArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_get_run",
       "output_schema": {
         "additionalProperties": true,
@@ -81,6 +84,7 @@
         "title": "backtest_get_specArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_get_spec",
       "output_schema": {
         "additionalProperties": true,
@@ -114,6 +118,7 @@
         "title": "backtest_investigateArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_investigate",
       "output_schema": {
         "additionalProperties": true,
@@ -135,6 +140,7 @@
         "title": "backtest_job_statusArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_job_status",
       "output_schema": {
         "additionalProperties": true,
@@ -167,6 +173,7 @@
         "title": "backtest_list_jobsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_list_jobs",
       "output_schema": {
         "additionalProperties": true,
@@ -188,6 +195,7 @@
         "title": "backtest_list_pendingArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_list_pending",
       "output_schema": {
         "additionalProperties": true,
@@ -220,6 +228,7 @@
         "title": "backtest_list_runsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_list_runs",
       "output_schema": {
         "additionalProperties": true,
@@ -245,6 +254,7 @@
         "title": "backtest_list_runs_by_ir_idArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_list_runs_by_ir_id",
       "output_schema": {
         "additionalProperties": true,
@@ -266,6 +276,7 @@
         "title": "backtest_list_specsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_list_specs",
       "output_schema": {
         "additionalProperties": true,
@@ -287,6 +298,7 @@
         "title": "backtest_reportArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_report",
       "output_schema": {
         "additionalProperties": true,
@@ -308,6 +320,7 @@
         "title": "backtest_run_attributionArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_run_attribution",
       "output_schema": {
         "additionalProperties": true,
@@ -355,6 +368,7 @@
         "title": "backtest_save_from_templateArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_save_from_template",
       "output_schema": {
         "additionalProperties": true,
@@ -411,6 +425,7 @@
         "title": "backtest_save_specArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_save_spec",
       "output_schema": {
         "additionalProperties": true,
@@ -480,6 +495,7 @@
         "title": "backtest_submitArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_submit",
       "output_schema": {
         "additionalProperties": true,
@@ -549,6 +565,7 @@
         "title": "backtest_submit_from_templateArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_submit_from_template",
       "output_schema": {
         "additionalProperties": true,
@@ -578,6 +595,7 @@
         "title": "backtest_waitArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "backtest_wait",
       "output_schema": {
         "additionalProperties": true,
@@ -599,6 +617,7 @@
         "title": "optimize_cancel_sessionArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_cancel_session",
       "output_schema": {
         "additionalProperties": true,
@@ -620,6 +639,7 @@
         "title": "optimize_get_pareto_frontierArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_get_pareto_frontier",
       "output_schema": {
         "additionalProperties": true,
@@ -641,6 +661,7 @@
         "title": "optimize_get_session_heatmapArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_get_session_heatmap",
       "output_schema": {
         "additionalProperties": true,
@@ -733,6 +754,7 @@
         "title": "optimize_launch_sweepArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_launch_sweep",
       "output_schema": {
         "additionalProperties": true,
@@ -765,6 +787,7 @@
         "title": "optimize_list_runsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_list_runs",
       "output_schema": {
         "additionalProperties": true,
@@ -797,6 +820,7 @@
         "title": "optimize_list_sessionsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_list_sessions",
       "output_schema": {
         "additionalProperties": true,
@@ -833,6 +857,7 @@
         "title": "optimize_policy_scorecardArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_policy_scorecard",
       "output_schema": {
         "additionalProperties": true,
@@ -870,6 +895,7 @@
         "title": "optimize_promote_optimal_runArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "optimize_promote_optimal_run",
       "output_schema": {
         "additionalProperties": true,
@@ -903,6 +929,7 @@
         "title": "regime_compare_periodsArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_compare_periods",
       "output_schema": {
         "additionalProperties": true,
@@ -924,6 +951,7 @@
         "title": "regime_entry_gateArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_entry_gate",
       "output_schema": {
         "additionalProperties": true,
@@ -960,6 +988,7 @@
         "title": "regime_explain_allocationArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_explain_allocation",
       "output_schema": {
         "additionalProperties": true,
@@ -981,6 +1010,7 @@
         "title": "regime_market_regimeArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_market_regime",
       "output_schema": {
         "additionalProperties": true,
@@ -1043,6 +1073,7 @@
         "title": "regime_position_managementArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_position_management",
       "output_schema": {
         "additionalProperties": true,
@@ -1071,6 +1102,7 @@
         "title": "regime_rank_candidatesArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_rank_candidates",
       "output_schema": {
         "additionalProperties": true,
@@ -1096,6 +1128,7 @@
         "title": "regime_transition_weightArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "regime_transition_weight",
       "output_schema": {
         "additionalProperties": true,

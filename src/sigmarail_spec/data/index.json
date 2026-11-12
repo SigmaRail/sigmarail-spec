@@ -37,6 +37,34 @@
       "uri": "sigmarail-spec://v1/data/fields"
     },
     {
+      "description": "Versioned bounded query AST over registered module datasets and declared joins.",
+      "id": "data.query",
+      "path": "data/query-v1.json",
+      "title": "Module-aware data query request schema",
+      "uri": "sigmarail-spec://v1/data/query/v1"
+    },
+    {
+      "description": "SQL-generated module manifest for SigmaRail core datasets, fields, joins, and capabilities.",
+      "id": "modules.core",
+      "path": "modules/core.json",
+      "title": "Built-in SigmaRail core module manifest",
+      "uri": "sigmarail-spec://v1/modules/core"
+    },
+    {
+      "description": "Studio module activation catalog",
+      "id": "modules.studio",
+      "path": "modules/studio.json",
+      "title": "Studio module activation catalog",
+      "uri": "sigmarail-spec://v1/modules/studio"
+    },
+    {
+      "description": "JSON Schema for installing and describing SigmaRail core and optional modules.",
+      "id": "modules.schema",
+      "path": "modules/module-manifest-v1.schema.json",
+      "title": "SigmaRail module manifest schema v1",
+      "uri": "sigmarail-spec://v1/modules/schema"
+    },
+    {
       "description": "SigmaRail price technical field slice.",
       "id": "data.fields.price_technical",
       "path": "fields/price_technical.json",
@@ -163,6 +191,13 @@
       "uri": "sigmarail-spec://v1/mcp"
     },
     {
+      "description": "Generated MCP input and output schemas for the current data query tool surface.",
+      "id": "mcp.tools.data_query",
+      "path": "mcp/tools/data_query.json",
+      "title": "MCP data query tools",
+      "uri": "sigmarail-spec://v1/mcp/tools/data_query"
+    },
+    {
       "description": "Generated MCP input and output schemas for the current screening tool surface.",
       "id": "mcp.tools.screening",
       "path": "mcp/tools/screening.json",
@@ -200,16 +235,21 @@
   ],
   "retrieval_order": [
     "index",
-    "expressions.core",
+    "modules.core",
+    "data.schema",
     "data.fields",
+    "data.query",
+    "expressions.core",
     "strategy.authoring",
     "strategy.execution"
   ],
   "retrieval_profiles": {
     "sharadar_query": [
       "index",
+      "modules.core",
       "data.schema",
       "data.fields/{domain}",
+      "data.query",
       "data.transforms",
       "mcp.tools.screening"
     ],
@@ -230,5 +270,5 @@
     ]
   },
   "spec_id": "sigmarail-spec",
-  "spec_version": "0.1.0"
+  "spec_version": "0.2.0"
 }

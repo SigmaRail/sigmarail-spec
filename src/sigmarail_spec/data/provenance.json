@@ -2,7 +2,7 @@
   "annotations_sha256": "29d587166db2966d61bbd085e2af48fed12c0534f1b0531a248275a045a301a4",
   "generator": {
     "path": "tools/build.py",
-    "sha256": "fa9226598b19b36c8878b47b265d84b52f28c9450cfd7b3600ce0280d5985bc5"
+    "sha256": "536fdb135449f9eacb315eae4b1b3ea0fbe6ee2d13e835cb9f6a3d4d3197902f"
   },
   "runtime_provenance": {
     "bootstrapped_from": {
@@ -37,25 +37,32 @@
       "revision": "bdcd04a2b6ddf5a36427c4b486f48eab57edbc9e"
     },
     "sigmarail": {
-      "content_sha256": "46ec6533b171cf196066b335aff4a4244e960bf8050c6cddf40721429180e0b3",
+      "content_sha256": "f5f137097c0683c6fe3ac437ec63f47eae205c3d33e8988b591427fbbd66d597",
       "hashed_paths": [
         "tools/generate_lineage_manifest.py",
+        "src/sigmarail/query.py",
+        "src/sigmarail/universe.py",
         "src/sigmarail/sql/schema-manifest.json",
         "src/sigmarail/sql/schema",
-        "spec/lineage-manifest.json"
+        "spec/lineage-manifest.json",
+        "src/sigmarail/spec/module-manifest.json"
       ],
       "path": "sigmarail",
       "revision": null
     },
     "studio": {
-      "content_sha256": "f49c91198bb75ea3fb16be6b7acce9b58ac910ce0a2a1ab06a495ee902a08fb9",
+      "content_sha256": "905cc23c42fc34740d9bb43492e21e5c88c288dac3665aa3140987e350a1151d",
       "hashed_paths": [
-        "vera_studio_mcp/domains/strategy.py",
-        "vera_studio_mcp/server.py",
-        "AGENTS.md"
+        "studio/api/lean_universe.py",
+        "studio/config/urls.py",
+        "studio/sigmarail_studio_mcp/domains/strategy.py",
+        "studio/sigmarail_studio_mcp/domains/core.py",
+        "studio/sigmarail_studio_mcp/server.py",
+        "studio/sigmarail_studio_mcp/data/module-catalog.json",
+        "studio/AGENTS.md"
       ],
-      "path": "VeraScreeningStudio",
-      "revision": "8bbecf6ebdabb7a5ddae44edcd72203e5d683b34"
+      "path": "sigmarail",
+      "revision": "1b1773bd836d5c7ae53ef815c6aa509530cd6c9c"
     },
     "trading_lab": {
       "content_sha256": "b7cdb5823b069bfd9792ae0f749d908aaf8b1439a725bd65a88f3370031778e0",

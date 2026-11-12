@@ -46,7 +46,7 @@ def main() -> int:
     parser.add_argument(
         "--destination",
         type=Path,
-        default=ROOT.parent / "LeanProjects/VeraTradingLab/vera_spec",
+        default=ROOT.parent / "LeanProjects/VeraTradingLab/sigmarail_spec",
         help="LEAN project vendor package directory",
     )
     parser.add_argument("--write", action="store_true", help="write expected vendor files")
