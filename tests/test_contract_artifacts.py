@@ -160,11 +160,12 @@ def test_lean_vendor_manifest_covers_all_generated_runtime_files() -> None:
 def test_builder_is_deterministic_and_check_mode_does_not_write() -> None:
     from pathlib import Path
     import json
+    import os
     import runpy
 
     root = Path(__file__).parents[1]
     builder = runpy.run_path(str(root / "tools/build.py"))
-    workspace = root.parent
+    workspace = Path(os.environ.get("SIGMARAIL_SPEC_SOURCE_WORKSPACE", root.parent)).resolve()
     lock = json.loads((root / "spec/sources.lock.json").read_text())
     first = builder["_render_documents"](workspace, lock)
     second = builder["_render_documents"](workspace, lock)

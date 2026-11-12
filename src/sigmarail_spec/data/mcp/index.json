@@ -1,4 +1,9 @@
 {
+  "activation_catalog": "sigmarail-spec://v1/modules/studio",
+  "default_modules": [
+    "core",
+    "studio"
+  ],
   "domains": {
     "backtesting": {
       "document_uri": "sigmarail-spec://v1/mcp/tools/backtesting",
@@ -37,6 +42,15 @@
         "regime_position_management",
         "regime_rank_candidates",
         "regime_transition_weight"
+      ]
+    },
+    "data_query": {
+      "document_uri": "sigmarail-spec://v1/mcp/tools/data_query",
+      "tool_count": 3,
+      "tools": [
+        "core_describe_dataset",
+        "core_list_datasets",
+        "core_query_dataset"
       ]
     },
     "live_deployment": {
@@ -97,12 +111,14 @@
       ]
     }
   },
-  "excluded_prefixes": [
-    "catalog_",
-    "kb_",
-    "portfolio_",
-    "research_"
+  "optional_modules": [
+    "screening",
+    "strategy",
+    "backtesting",
+    "portfolio",
+    "deployment",
+    "knowledge"
   ],
-  "source": "VeraScreeningStudio/vera_studio_mcp/server.py",
+  "source": "sigmarail/studio/sigmarail_studio_mcp/server.py",
   "version": 1
 }

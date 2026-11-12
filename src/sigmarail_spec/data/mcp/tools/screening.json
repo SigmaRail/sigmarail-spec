@@ -79,6 +79,7 @@
         "title": "screen_probe_asofArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "screen_probe_asof",
       "output_schema": {
         "additionalProperties": true,
@@ -183,6 +184,7 @@
         "title": "screen_probe_diffArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "screen_probe_diff",
       "output_schema": {
         "additionalProperties": true,
@@ -261,6 +263,7 @@
         "title": "screen_probe_layersArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "screen_probe_layers",
       "output_schema": {
         "additionalProperties": true,
@@ -354,6 +357,7 @@
         "title": "screen_probe_rangeArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "screen_probe_range",
       "output_schema": {
         "additionalProperties": true,
@@ -383,6 +387,7 @@
         "title": "screen_stocksArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "screen_stocks",
       "output_schema": {
         "additionalProperties": true,

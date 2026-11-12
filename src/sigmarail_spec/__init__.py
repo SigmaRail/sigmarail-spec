@@ -16,6 +16,19 @@ from .expr import (
     is_runtime_only_expr, parse_bool_expr, validate_bool_expr_depth,
 )
 from .entry_trigger_ast import ENUM_TRIGGER_TYPES, compile_entry_trigger, trigger_eval_row
+from .data_query import (
+    DataQueryV1,
+    QueryAliasExpression,
+    QueryArithmeticExpression,
+    QueryComputedField,
+    QueryExpression,
+    QueryField,
+    QueryFieldExpression,
+    QueryJoin,
+    QueryLiteralExpression,
+    QueryOrder,
+    QueryPredicate,
+)
 from .evaluate import (
     evaluate_entry_triggers,
     evaluate_single_trigger,
@@ -24,7 +37,7 @@ from .evaluate import (
     evaluate_where_ast,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 
 def _index() -> dict[str, Any]:
@@ -60,6 +73,9 @@ def get_document(key: str) -> dict[str, Any]:
 
 __all__ = [
     "MAX_BOOL_DEPTH", "MAX_FORMULA_DEPTH", "AllExpr", "AnyExpr", "BoolExprItem",
+    "DataQueryV1", "QueryAliasExpression", "QueryArithmeticExpression",
+    "QueryComputedField", "QueryExpression", "QueryField", "QueryFieldExpression",
+    "QueryJoin", "QueryLiteralExpression", "QueryOrder", "QueryPredicate",
     "__version__",
     "CmpEq", "CmpGt", "CmpGte", "CmpLt", "CmpLte", "ColBetweenExpr",
     "ColEqExpr", "ColGteExpr", "ColLteExpr", "ColRef", "FormulaExpr",

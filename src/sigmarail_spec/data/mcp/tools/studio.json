@@ -30,6 +30,7 @@
         "title": "chart_price_embedArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "chart_price_embed",
       "output_schema": {
         "additionalProperties": true,
@@ -77,6 +78,7 @@
         "title": "chart_tv_embedArguments",
         "type": "object"
       },
+      "module": "screening",
       "name": "chart_tv_embed",
       "output_schema": {
         "additionalProperties": true,
@@ -142,6 +144,7 @@
         "title": "studio_navigateArguments",
         "type": "object"
       },
+      "module": "studio",
       "name": "studio_navigate",
       "output_schema": {
         "additionalProperties": true,
@@ -167,6 +170,7 @@
         "title": "studio_run_contextArguments",
         "type": "object"
       },
+      "module": "backtesting",
       "name": "studio_run_context",
       "output_schema": {
         "additionalProperties": true,
